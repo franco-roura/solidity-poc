@@ -10,6 +10,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsnd -r tsconfig-paths/register",
+    "lint": "eslint src",
     "test": "ts-mocha -p tsconfig.json -r tsconfig-paths/register src/**/*.test.ts",
     "compile": "tsnd src/compile.ts"
   },
@@ -25,6 +26,9 @@
     "@types/expect": "^24.3.0",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.7.9",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
     "ts-mocha": "^8.0.0",
     "tsconfig-paths": "^3.11.0"
   }

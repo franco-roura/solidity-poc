@@ -7,8 +7,8 @@ import inboxContract from 'src/contracts/Inbox.sol.build.json'
 
 const web3 = new Web3(ganache.provider())
 
-let accounts;
-let inbox: Contract;
+let accounts: string[]
+let inbox: Contract
 const defaultMessage = 'Hello world 😂'
 
 beforeEach(async () => {
@@ -34,8 +34,18 @@ describe('Inbox', () => {
     it('deploys a contract', () => {
         assert.ok(inbox.options.address)
     })
+
     it('has a default message', async () => {
         const message = await inbox.methods.message().call()
         assert.strictEqual(message, defaultMessage)
+    })
+
+    it('can change the message', async () => {
+        const newMessage = 'Para bailar la bamba se necesita una poca de gracia.'
+        await inbox.methods.setMessage(newMessage).send({
+            from: accounts[1]
+        })
+        const message = await inbox.methods.message().call()
+        assert.strictEqual(message, newMessage)
     })
 })
