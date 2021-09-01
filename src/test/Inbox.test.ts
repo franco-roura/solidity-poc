@@ -1,11 +1,11 @@
 import assert from 'assert'
 import ganache from 'ganache-cli'
 import Web3 from 'web3'
-
-const web3 = new Web3(ganache.provider())
+import { Contract } from 'web3-eth-contract'
 
 import inboxContract from 'src/contracts/Inbox.sol.build.json'
-import { Contract } from 'web3-eth-contract'
+
+const web3 = new Web3(ganache.provider())
 
 let accounts;
 let inbox: Contract;
