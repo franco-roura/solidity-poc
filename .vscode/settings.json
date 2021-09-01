@@ -1,0 +1,13 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.gotoLocation.multipleDefinitions": "peek",
+    "eslint.codeActionsOnSave.mode": "all",
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "solidity.compileUsingRemoteVersion": "v0.4.17+commit.bdeb9e52",
+    "solidity.defaultCompiler": "remote"
+}
