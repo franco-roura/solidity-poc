@@ -1,3 +1,3 @@
-import compile from "src/compile";
+import compile from 'src/compile'
 
 console.log({ compile })
