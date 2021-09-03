@@ -1,14 +1,14 @@
 import assert from 'assert'
 import ganache from 'ganache-cli'
 import Web3 from 'web3'
-import { Contract } from 'web3-eth-contract'
+import { Contract } from 'src/@types/web3-eth-contract'
 
 import contracts from 'src/compile'
 
 const web3 = new Web3(ganache.provider())
 
 let accounts: string[]
-let inbox: Contract
+let inbox: Contract<'message' | 'setMessage'>
 const defaultMessage = 'Hello world 😂'
 
 beforeEach(async () => {
