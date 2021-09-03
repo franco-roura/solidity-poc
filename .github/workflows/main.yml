@@ -20,7 +20,7 @@ jobs:
         run: yarn
 
       - name: Attempt to compile
-        run: yarn tsc
+        run: yarn tsc --version && yarn tsc
 
       - name: Run tests
         run: yarn test
