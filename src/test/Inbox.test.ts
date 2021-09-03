@@ -7,8 +7,10 @@ import contracts from 'src/compile'
 
 const web3 = new Web3(ganache.provider())
 
+type InboxContract = Contract<'message' | 'setMessage'>
+
 let accounts: string[]
-let inbox: Contract<'message' | 'setMessage'>
+let inbox: InboxContract
 const defaultMessage = 'Hello world 😂'
 
 beforeEach(async () => {
@@ -19,7 +21,7 @@ beforeEach(async () => {
     // the contract
     const contract = new web3.eth.Contract(
         JSON.parse(contracts.inbox.interface)
-    )
+    ) as unknown as InboxContract
     const deployedContract = contract.deploy({
         data: contracts.inbox.bytecode,
         arguments: [defaultMessage]
