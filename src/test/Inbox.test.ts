@@ -3,7 +3,7 @@ import ganache from 'ganache-cli'
 import Web3 from 'web3'
 import { Contract } from 'web3-eth-contract'
 
-import inboxContract from 'src/contracts/Inbox.sol.build.json'
+import contracts from 'src/compile'
 
 const web3 = new Web3(ganache.provider())
 
@@ -18,10 +18,10 @@ beforeEach(async () => {
     // Use one of those accounts to deploy
     // the contract
     const contract = new web3.eth.Contract(
-        JSON.parse(inboxContract.interface)
+        JSON.parse(contracts.inbox.interface)
     )
     const deployedContract = contract.deploy({
-        data: inboxContract.bytecode,
+        data: contracts.inbox.bytecode,
         arguments: [defaultMessage]
     })
     inbox = await deployedContract.send({
