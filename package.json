@@ -12,7 +12,8 @@
     "dev": "tsnd -r tsconfig-paths/register -r dotenv/config",
     "lint": "eslint src",
     "test": "ts-mocha -p tsconfig.json -r tsconfig-paths/register -r dotenv/config src/**/*.test.ts",
-    "build": "tsnd src/compile.ts"
+    "build": "tsnd src/compile.ts",
+    "postinstall": "cd frontend && yarn"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
