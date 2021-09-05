@@ -21,7 +21,6 @@ import BN = require('bn.js');
 import { Common, PromiEvent, hardfork, chain, BlockNumber, PastLogsOptions, LogsOptions } from 'web3-core'
 import { AbiItem } from 'web3-utils'
 
-// TODO: Add more generics!
 export class Contract<T> {
     constructor(
         jsonInterface: AbiItem[],

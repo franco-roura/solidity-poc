@@ -15,4 +15,5 @@ const contracts = {
     lottery: solc.compile<':Lottery'>(lotterySource, 1).contracts[':Lottery']
 }
 
+
 export default contracts

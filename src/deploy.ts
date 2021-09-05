@@ -5,7 +5,8 @@ import contracts from 'src/compile'
 
 const provider = new HDWalletProvider(
     process.env.ACCT_MNEUMONIC,
-    process.env.NETWORK_ENDPOINT
+    'http://127.0.0.1:7545'
+    // process.env.NETWORK_ENDPOINT
 )
 
 const web3 = new Web3(provider)
@@ -14,11 +15,11 @@ async function deploy() {
     const [account] = await web3.eth.getAccounts()
     console.log('Attempting to deploy from account', account)
     const contract = new web3.eth.Contract(
-        JSON.parse(contracts.inbox.interface)
+        JSON.parse(contracts.lottery.interface)
     )
     const deployedContract = contract.deploy({
-        data: contracts.inbox.bytecode,
-        arguments: ['Initial message 🤪']
+        data: contracts.lottery.bytecode,
+        //arguments: ['Initial message 🤪']
     })
     const result = await deployedContract.send({
         gas: 1_000_000,

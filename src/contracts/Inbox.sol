@@ -5,7 +5,7 @@ contract Inbox {
     address public myAddr;
 
     function Inbox(string initialMessage) public {
-        message = initialMessage;    
+        message = initialMessage;
     }
 
     function setMessage(string newMessage) public {
